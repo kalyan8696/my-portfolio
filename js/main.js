@@ -301,22 +301,35 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
+  const drawerBackdrop = document.getElementById('drawerBackdrop');
   const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  const closeMobileMenu = () => {
+    if (mobileDrawer) mobileDrawer.classList.remove('open');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.classList.remove('open');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+    if (drawerBackdrop) drawerBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  };
 
   if (mobileMenuBtn && mobileDrawer) {
     mobileMenuBtn.addEventListener('click', () => {
       const isOpen = mobileDrawer.classList.toggle('open');
       mobileMenuBtn.classList.toggle('open', isOpen);
       mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+      if (drawerBackdrop) drawerBackdrop.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     mobileLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileDrawer.classList.remove('open');
-        mobileMenuBtn.classList.remove('open');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeMobileMenu);
     });
+
+    if (drawerBackdrop) {
+      drawerBackdrop.addEventListener('click', closeMobileMenu);
+    }
 
     // Close on outside click
     document.addEventListener('click', (e) => {
@@ -325,9 +338,14 @@ document.addEventListener('DOMContentLoaded', () => {
         !mobileDrawer.contains(e.target) &&
         !mobileMenuBtn.contains(e.target)
       ) {
-        mobileDrawer.classList.remove('open');
-        mobileMenuBtn.classList.remove('open');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        closeMobileMenu();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+        closeMobileMenu();
       }
     });
   }
