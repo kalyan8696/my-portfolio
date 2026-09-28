@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalyan Purohit | Machine Learning Developer & Data Science Specialist</title>
+  <meta name="description" content="Portfolio of Kalyan Purohit - MCA Student, Aspiring Data Scientist, Machine Learning Developer, and Full-Stack Craftsman proficient in Python, Scikit-learn, TensorFlow, and SQL.">
+  <meta name="author" content="Kalyan Purohit">
+  <meta name="keywords" content="Kalyan Purohit, Machine Learning, Data Science, Python, Scikit-learn, Deep Learning, TensorFlow, Portfolio, MCA, Full-Stack">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kalyan Purohit | ML Developer & Data Scientist Portfolio">
+  <meta property="og:description" content="Discover machine learning projects, predictive analytics pipelines, academic achievements, and technical expertise of Kalyan Purohit.">
+  <meta property="og:image" content="assets/images/kalyan-avatar.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%200%20100%20100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Cursor Glow Effect -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Background Animated Mesh Gradient Blobs -->
+  <div class="mesh-background" aria-hidden="true">
+    <div class="mesh-blob blob-violet"></div>
+    <div class="mesh-blob blob-cyan"></div>
+    <div class="mesh-blob blob-blue"></div>
+    <div class="mesh-grid-overlay"></div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper" id="mainHeader">
+    <nav class="navbar container" aria-label="Main Navigation">
+      <a href="#hero" class="nav-brand" aria-label="Kalyan Purohit Home">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-name">Kalyan</span>
+        <span class="brand-dot">.ML</span>
+        <span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link active" data-nav="hero">Home</a></li>
+        <li><a href="#about" class="nav-link" data-nav="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-nav="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-nav="projects">Projects</a></li>
+        <li><a href="#education" class="nav-link" data-nav="education">Education</a></li>
+        <li><a href="#contact" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+
+      <!-- Right Navigation Actions -->
+      <div class="nav-actions">
+        <!-- Status Indicator Pill -->
+        <div class="status-indicator" title="Available for internships & roles">
+          <span class="pulse-beacon"></span>
+          <span class="status-text">Available for Hire</span>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="btn-icon theme-btn" aria-label="Toggle Color Theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#contact" class="btn btn-sm btn-gradient nav-cta">Let's Connect</a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="mobileMenuBtn" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-link">Home</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#education" class="mobile-link">Education</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="#contact" class="btn btn-gradient w-100">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="hero">
+      <!-- Interactive Constellation Canvas -->
+      <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-container">
+        <!-- Hero Content (Left) -->
+        <div class="hero-content reveal-up">
+          <div class="hero-badge">
+            <span class="badge-sparkle">✨</span>
+            <span>MCA Scholar &bull; Silver Oak University</span>
+            <span class="badge-divider">|</span>
+            <span class="badge-role">AI / ML Enthusiast</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text glow-text">Kalyan Purohit</span>
+          </h1>
+
+          <div class="typing-container">
+            <span class="typing-prefix">I build </span>
+            <span class="typing-text" id="typingText"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+
+          <p class="hero-description">
+            MCA student with a solid foundation in <strong>Python, Java, SQL, Data Science, and Machine Learning</strong>. 
+            Passionate about turning complex data into predictive intelligence and crafting robust, real-world AI software.
+          </p>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-lg btn-gradient" id="heroProjectsBtn">
+              <span>Explore Projects</span>
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="https://github.com/kalyan8696" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-glass" aria-label="Visit Kalyan's GitHub profile">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/kalyan-purohit-07492736a" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-glass" aria-label="Connect with Kalyan on LinkedIn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-pill">
+              <span class="stat-number">9.20</span>
+              <span class="stat-label">MCA Sem 2 SGPA</span>
+            </div>
+            <div class="hero-stat-pill">
+              <span class="stat-number">7.74</span>
+              <span class="stat-label">BCA CGPA</span>
+            </div>
+            <div class="hero-stat-pill">
+              <span class="stat-number">4+</span>
+              <span class="stat-label">Languages Spoken</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase (Right) -->
+        <div class="hero-visual reveal-right">
+          <div class="card-3d-wrapper" id="heroCardWrapper">
+            <div class="profile-card-3d" id="heroCard">
+              <!-- Glow outline -->
+              <div class="card-glow-overlay"></div>
+              
+              <!-- Card Image Frame -->
+              <div class="card-image-box">
+                <img src="assets/images/kalyan-avatar.jpg" alt="Kalyan Purohit - Machine Learning Developer" class="profile-photo" loading="eager">
+                <div class="image-gradient-tint"></div>
+              </div>
+
+              <!-- Floating Micro-Badge Top Left -->
+              <div class="floating-badge badge-ml">
+                <div class="badge-icon-box">🤖</div>
+                <div class="badge-text-box">
+                  <span class="badge-title">ML & Data Science</span>
+                  <span class="badge-subtitle">Scikit-learn &bull; Regression</span>
+                </div>
+              </div>
+
+              <!-- Floating Micro-Badge Bottom Right -->
+              <div class="floating-badge badge-grade">
+                <div class="badge-icon-box">🎓</div>
+                <div class="badge-text-box">
+                  <span class="badge-title">Silver Oak University</span>
+                  <span class="badge-subtitle">MCA Class of 2027</span>
+                </div>
+              </div>
+
+              <!-- Embedded Interactive Code Console -->
+              <div class="hero-terminal">
+                <div class="terminal-header">
+                  <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                  </div>
+                  <span class="terminal-title">kalyan_engineer.py</span>
+                </div>
+                <pre class="terminal-code"><code><span class="c-keyword">class</span> <span class="c-class">Engineer</span>:
+    name = <span class="c-str">"Kalyan Purohit"</span>
+    core = [<span class="c-str">"Python"</span>, <span class="c-str">"Machine Learning"</span>, <span class="c-str">"SQL"</span>]
+    passion = <span class="c-str">"Data-Driven Problem Solving"</span>
+    
+    <span class="c-keyword">def</span> <span class="c-func">predict_future</span>(self):
+        <span class="c-keyword">return</span> <span class="c-str">"Innovate & Deliver Value 🚀"</span></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <a href="#about" class="scroll-down-hint" aria-label="Scroll to About section">
+        <span class="mouse-icon">
+          <span class="mouse-wheel"></span>
+        </span>
+        <span class="scroll-text">Scroll to explore</span>
+      </a>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal-up">
+          <div class="section-tag">
+            <span class="tag-icon">👤</span>
+            <span>GET TO KNOW ME</span>
+          </div>
+          <h2 class="section-title">Bridging Data Science & Real-World Software</h2>
+          <p class="section-subtitle">
+            An ambitious technologist dedicated to converting mathematical foundations and machine learning models into impactful software.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Bio Card -->
+          <div class="about-bio-card glass-panel reveal-left">
+            <h3 class="bio-heading">
+              Hello! I'm <span class="gradient-text">Kalyan Purohit</span>
+            </h3>
+            <p class="bio-text">
+              I am a <strong>Master of Computer Application (MCA)</strong> scholar at Silver Oak University with an active academic record (<strong>Sem 1: 7.80, Sem 2: 9.20 SGPA</strong>), following my Bachelor of Computer Application (BCA) from Veer Narmad South Gujarat University (VNSGU), Surat with a <strong>7.74 CGPA</strong>.
+            </p>
+            <p class="bio-text">
+              My core passion centers on <strong>Machine Learning, Data Science, and Full-Stack Engineering</strong>. I enjoy exploring raw datasets, discovering hidden patterns through Exploratory Data Analysis (EDA), engineering insightful features, and training supervised learning models that make accurate, dependable predictions.
+            </p>
+            <p class="bio-text">
+              Beyond theory, I believe in practical code. Whether writing Scikit-learn pipelines in Python, building analytical dashboards, or developing responsive web interfaces, I strive for clean architecture, mathematical rigor, and intuitive user experiences.
+            </p>
+
+            <!-- Key Pillars -->
+            <div class="pillars-grid">
+              <div class="pillar-item">
+                <div class="pillar-icon">📊</div>
+                <div>
+                  <h4 class="pillar-title">Data Analytics & EDA</h4>
+                  <p class="pillar-desc">Pandas, NumPy, and statistical exploration for pattern discovery.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <div class="pillar-icon">🧠</div>
+                <div>
+                  <h4 class="pillar-title">Machine Learning</h4>
+                  <p class="pillar-desc">Regression, classification, feature engineering, and model validation.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <div class="pillar-icon">💻</div>
+                <div>
+                  <h4 class="pillar-title">Software Engineering</h4>
+                  <p class="pillar-desc">Object-oriented Python & Java, relational SQL, and modern web apps.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <div class="pillar-icon">🚀</div>
+                <div>
+                  <h4 class="pillar-title">Agile Learning</h4>
+                  <p class="pillar-desc">Quick to adopt cutting-edge tools and solve ambiguous engineering challenges.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Contacts Row inside Bio -->
+            <div class="bio-meta-row">
+              <div class="meta-item">
+                <span class="meta-label">Location:</span>
+                <span class="meta-val">Gujarat, India</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Degree:</span>
+                <span class="meta-val">MCA (2025 - 2027)</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Email:</span>
+                <a href="mailto:purohitkalyan34@gmail.com" class="meta-val-link">purohitkalyan34@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Highlights & Counter Cards -->
+          <div class="about-highlights reveal-right">
+            <!-- Animated Counter Card 1 -->
+            <div class="stat-card glass-panel" data-counter="9.20" data-decimals="2">
+              <div class="stat-icon-wrap icon-purple">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <div class="stat-number-wrapper">
+                  <span class="stat-counter" id="counterMCA">0.00</span>
+                  <span class="stat-suffix">/10</span>
+                </div>
+                <h4 class="stat-heading">MCA Peak SGPA</h4>
+                <p class="stat-sub">Silver Oak University &bull; Semester 2</p>
+              </div>
+            </div>
+
+            <!-- Animated Counter Card 2 -->
+            <div class="stat-card glass-panel" data-counter="7.74" data-decimals="2">
+              <div class="stat-icon-wrap icon-cyan">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <div class="stat-number-wrapper">
+                  <span class="stat-counter" id="counterBCA">0.00</span>
+                  <span class="stat-suffix">/10</span>
+                </div>
+                <h4 class="stat-heading">BCA Graduation CGPA</h4>
+                <p class="stat-sub">VNSGU Surat &bull; 2022 – 2025</p>
+              </div>
+            </div>
+
+            <!-- Animated Counter Card 3 -->
+            <div class="stat-card glass-panel" data-counter="4" data-decimals="0">
+              <div class="stat-icon-wrap icon-emerald">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <div class="stat-number-wrapper">
+                  <span class="stat-counter" id="counterLanguages">0</span>
+                  <span class="stat-suffix">Languages</span>
+                </div>
+                <h4 class="stat-heading">Multilingual Fluency</h4>
+                <p class="stat-sub">English, Hindi, Gujarati, Marwadi</p>
+              </div>
+            </div>
+
+            <!-- Focus Card 4 -->
+            <div class="stat-card glass-panel highlight-focus">
+              <div class="stat-icon-wrap icon-amber">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <div class="stat-number-wrapper">
+                  <span class="stat-counter-text">AI / ML Focus</span>
+                </div>
+                <h4 class="stat-heading">Applied Problem Solver</h4>
+                <p class="stat-sub">Supervised Algorithms, Pipeline Optimization & Full-Stack</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal-up">
+          <div class="section-tag">
+            <span class="tag-icon">⚡</span>
+            <span>EXPERTISE & TOOLKIT</span>
+          </div>
+          <h2 class="section-title">Organized Technical Arsenal</h2>
+          <p class="section-subtitle">
+            A comprehensive stack spanning low-level algorithms, data science libraries, machine learning pipelines, and modern web frameworks.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="skills-filter-tabs reveal-up" role="tablist">
+          <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All Domains</button>
+          <button class="filter-tab" data-filter="programming" role="tab" aria-selected="false">Programming</button>
+          <button class="filter-tab" data-filter="datascience" role="tab" aria-selected="false">Data Science & SQL</button>
+          <button class="filter-tab" data-filter="ml" role="tab" aria-selected="false">Machine Learning</button>
+          <button class="filter-tab" data-filter="dl" role="tab" aria-selected="false">Deep Learning</button>
+          <button class="filter-tab" data-filter="web" role="tab" aria-selected="false">Web & Full-Stack</button>
+        </div>
+
+        <!-- Skills Grid Container -->
+        <div class="skills-grid reveal-up">
+          <!-- 1. Programming Category -->
+          <div class="skill-card glass-panel" data-category="programming">
+            <div class="skill-category-badge">Programming</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">🐍</div>
+              <div>
+                <h3 class="skill-name">Python</h3>
+                <span class="skill-meta">Primary Language &bull; Advanced</span>
+              </div>
+            </div>
+            <p class="skill-desc">Object-oriented programming, data structures, automation, statistical scripting, and scientific computing.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">OOP</span>
+              <span class="skill-pill">Scripting</span>
+              <span class="skill-pill">Data Pipelines</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 92%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="programming">
+            <div class="skill-category-badge">Programming</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">☕</div>
+              <div>
+                <h3 class="skill-name">Java</h3>
+                <span class="skill-meta">Object-Oriented &bull; Core Systems</span>
+              </div>
+            </div>
+            <p class="skill-desc">Robust backend foundations, inheritance, polymorphism, multithreading, and algorithmic problem-solving.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Core Java</span>
+              <span class="skill-pill">OOP Architecture</span>
+              <span class="skill-pill">Data Structures</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 82%;"></div>
+            </div>
+          </div>
+
+          <!-- 2. Data Science Category -->
+          <div class="skill-card glass-panel" data-category="datascience">
+            <div class="skill-category-badge">Data Science</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">🐼</div>
+              <div>
+                <h3 class="skill-name">Pandas</h3>
+                <span class="skill-meta">Data Wrangling & Analysis</span>
+              </div>
+            </div>
+            <p class="skill-desc">DataFrames manipulation, missing value imputation, complex filtering, aggregation, merging, and reshaping.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Data Cleaning</span>
+              <span class="skill-pill">Aggregations</span>
+              <span class="skill-pill">ETL Operations</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 90%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="datascience">
+            <div class="skill-category-badge">Data Science</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">🔢</div>
+              <div>
+                <h3 class="skill-name">NumPy</h3>
+                <span class="skill-meta">Numerical Computing</span>
+              </div>
+            </div>
+            <p class="skill-desc">N-dimensional array operations, matrix linear algebra, vectorization, broadcasting, and mathematical transforms.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Matrix Math</span>
+              <span class="skill-pill">Vectorization</span>
+              <span class="skill-pill">Arrays</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 88%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="datascience">
+            <div class="skill-category-badge">Data Science</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">📈</div>
+              <div>
+                <h3 class="skill-name">Matplotlib</h3>
+                <span class="skill-meta">Data Visualization</span>
+              </div>
+            </div>
+            <p class="skill-desc">Exploratory plotting, scatter graphs, histograms, heatmaps, distribution curves, and presentation visual dashboards.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">EDA Plots</span>
+              <span class="skill-pill">Distributions</span>
+              <span class="skill-pill">Heatmaps</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 86%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="datascience">
+            <div class="skill-category-badge">Data Science</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">🗄️</div>
+              <div>
+                <h3 class="skill-name">SQL</h3>
+                <span class="skill-meta">Relational Databases</span>
+              </div>
+            </div>
+            <p class="skill-desc">Complex joins, subqueries, group-by aggregates, schema normalization, and efficient data retrieval pipelines.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Complex Queries</span>
+              <span class="skill-pill">Joins & Aggregation</span>
+              <span class="skill-pill">Schema Design</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 88%;"></div>
+            </div>
+          </div>
+
+          <!-- 3. Machine Learning Category -->
+          <div class="skill-card glass-panel" data-category="ml">
+            <div class="skill-category-badge">Machine Learning</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">🔬</div>
+              <div>
+                <h3 class="skill-name">Scikit-learn</h3>
+                <span class="skill-meta">Core ML Modeling Library</span>
+              </div>
+            </div>
+            <p class="skill-desc">Model training, cross-validation, hyperparameter tuning, preprocessing pipelines, and performance evaluation.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Pipelines</span>
+              <span class="skill-pill">Model Tuning</span>
+              <span class="skill-pill">Evaluation</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 90%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="ml">
+            <div class="skill-category-badge">Machine Learning</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">📉</div>
+              <div>
+                <h3 class="skill-name">Regression Analysis</h3>
+                <span class="skill-meta">Supervised Predictive Models</span>
+              </div>
+            </div>
+            <p class="skill-desc">Linear, Ridge, Lasso, and Polynomial Regression for continuous target estimation evaluated via RMSE and R².</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Linear Regression</span>
+              <span class="skill-pill">R² & MSE</span>
+              <span class="skill-pill">Loss Minimization</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 92%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="ml">
+            <div class="skill-category-badge">Machine Learning</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">🎯</div>
+              <div>
+                <h3 class="skill-name">Classification Models</h3>
+                <span class="skill-meta">Categorical Prediction</span>
+              </div>
+            </div>
+            <p class="skill-desc">Logistic Regression, Decision Trees, K-Nearest Neighbors, and Confusion Matrix / Precision / Recall analysis.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Logistic Regression</span>
+              <span class="skill-pill">Confusion Matrix</span>
+              <span class="skill-pill">F1 Score</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 88%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="ml">
+            <div class="skill-category-badge">Machine Learning</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">✂️</div>
+              <div>
+                <h3 class="skill-name">Train-Test Split & Features</h3>
+                <span class="skill-meta">Validation & Feature Selection</span>
+              </div>
+            </div>
+            <p class="skill-desc">Stratified sampling, preventing data leakage, feature correlation analysis, and dimensional reduction.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Train/Test Split</span>
+              <span class="skill-pill">Feature Selection</span>
+              <span class="skill-pill">Cross-Validation</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 91%;"></div>
+            </div>
+          </div>
+
+          <!-- 4. Deep Learning Category -->
+          <div class="skill-card glass-panel" data-category="dl">
+            <div class="skill-category-badge">Deep Learning</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">🧠</div>
+              <div>
+                <h3 class="skill-name">TensorFlow</h3>
+                <span class="skill-meta">Deep Learning Framework</span>
+              </div>
+            </div>
+            <p class="skill-desc">Neural network fundamentals, Dense layers, activation functions (ReLU, Sigmoid, Softmax), and backpropagation.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Neural Nets</span>
+              <span class="skill-pill">Tensors</span>
+              <span class="skill-pill">Model Training</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 78%;"></div>
+            </div>
+          </div>
+
+          <!-- 5. Web & Full-Stack Category -->
+          <div class="skill-card glass-panel" data-category="web">
+            <div class="skill-category-badge">Web & Full-Stack</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">⚛️</div>
+              <div>
+                <h3 class="skill-name">React</h3>
+                <span class="skill-meta">Component-Based Frontend</span>
+              </div>
+            </div>
+            <p class="skill-desc">State management with hooks, reusable component architecture, virtual DOM, and interactive client UIs.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Components</span>
+              <span class="skill-pill">Hooks (useState)</span>
+              <span class="skill-pill">SPAs</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 84%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="web">
+            <div class="skill-category-badge">Web & Full-Stack</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">🌐</div>
+              <div>
+                <h3 class="skill-name">HTML5 & Modern CSS3</h3>
+                <span class="skill-meta">Structure & Responsive Styling</span>
+              </div>
+            </div>
+            <p class="skill-desc">Semantic markup, CSS Grid, Flexbox layouts, custom animations, responsive viewports, and glassmorphic designs.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Responsive Design</span>
+              <span class="skill-pill">Flexbox & Grid</span>
+              <span class="skill-pill">CSS Animations</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 94%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-card glass-panel" data-category="web">
+            <div class="skill-category-badge">Web & Full-Stack</div>
+            <div class="skill-header">
+              <div class="skill-icon-box">⚡</div>
+              <div>
+                <h3 class="skill-name">JavaScript (ES6+)</h3>
+                <span class="skill-meta">Dynamic Client-Side Logic</span>
+              </div>
+            </div>
+            <p class="skill-desc">Asynchronous programming (Promises, async/await), DOM manipulation, event listeners, and API integration.</p>
+            <div class="skill-tags">
+              <span class="skill-pill">Async/Await</span>
+              <span class="skill-pill">DOM APIs</span>
+              <span class="skill-pill">ES6 Modules</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--skill-pct: 88%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal-up">
+          <div class="section-tag">
+            <span class="tag-icon">🚀</span>
+            <span>PORTFOLIO SHOWCASE</span>
+          </div>
+          <h2 class="section-title">Featured Machine Learning Projects</h2>
+          <p class="section-subtitle">
+            Engineered end-to-end: exploratory analysis, feature preprocessing, mathematical regression modeling, and interactive simulations.
+          </p>
+        </div>
+
+        <div class="projects-list">
+          <!-- PROJECT 1: Student Performance Prediction -->
+          <article class="project-showcase glass-panel reveal-up" id="project-student">
+            <div class="project-grid">
+              <!-- Visual Column with interactive hover image -->
+              <div class="project-media-col">
+                <div class="project-image-container">
+                  <img src="assets/images/student-ml.jpg" alt="Student Performance Prediction Dashboard" class="project-img" loading="lazy">
+                  <div class="project-badge-floating">
+                    <span class="status-dot"></span>
+                    <span>Supervised ML &bull; Regression</span>
+                  </div>
+                  <div class="project-overlay-actions">
+                    <button class="btn btn-sm btn-glass btn-glow open-modal-btn" data-project="student" aria-label="View deep dive architecture for Student Performance Prediction">
+                      🔍 View Model Architecture
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Live Interactive Prediction Simulator Widget -->
+                <div class="interactive-simulator-box">
+                  <div class="sim-header">
+                    <div class="sim-title-wrap">
+                      <span class="sim-dot"></span>
+                      <span class="sim-title">Live Interactive Predictor</span>
+                    </div>
+                    <span class="sim-hint">Adjust inputs to calculate score</span>
+                  </div>
+
+                  <div class="sim-controls">
+                    <!-- Slider 1: Study Hours -->
+                    <div class="sim-slider-group">
+                      <div class="sim-slider-label">
+                        <span>Weekly Study Hours:</span>
+                        <span class="slider-value" id="valHours">12 hrs</span>
+                      </div>
+                      <input type="range" id="inputHours" min="1" max="25" value="12" step="1" class="custom-range" aria-label="Weekly Study Hours">
+                    </div>
+
+                    <!-- Slider 2: Attendance Rate -->
+                    <div class="sim-slider-group">
+                      <div class="sim-slider-label">
+                        <span>Attendance Rate:</span>
+                        <span class="slider-value" id="valAttendance">88%</span>
+                      </div>
+                      <input type="range" id="inputAttendance" min="50" max="100" value="88" step="1" class="custom-range" aria-label="Attendance Percentage">
+                    </div>
+
+                    <!-- Slider 3: Internal Assessment Score -->
+                    <div class="sim-slider-group">
+                      <div class="sim-slider-label">
+                        <span>Internal Marks:</span>
+                        <span class="slider-value" id="valInternal">42 / 50</span>
+                      </div>
+                      <input type="range" id="inputInternal" min="10" max="50" value="42" step="1" class="custom-range" aria-label="Internal Exam Marks">
+                    </div>
+                  </div>
+
+                  <!-- Live Prediction Calculation Output -->
+                  <div class="sim-result-card">
+                    <div class="result-details">
+                      <span class="result-title">Predicted Final Score:</span>
+                      <span class="result-value gradient-text" id="predictedScore">87.4%</span>
+                    </div>
+                    <div class="result-badge-wrap">
+                      <span class="grade-badge" id="predictedGrade">Grade: A (Distinction)</span>
+                      <span class="conf-badge">94% Confidence</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Information Column -->
+              <div class="project-info-col">
+                <div class="project-num-tag">PROJECT 01 &bull; MACHINE LEARNING</div>
+                <h3 class="project-title">Student Performance Prediction System</h3>
+                <p class="project-tagline">
+                  An intelligent supervised machine learning model that forecasts student academic outcomes by synthesizing study behaviors, attendance patterns, and coursework metrics.
+                </p>
+
+                <!-- Key Implementation Highlights -->
+                <div class="project-highlights-box">
+                  <h4 class="highlights-heading">Key Engineering Highlights:</h4>
+                  <ul class="highlights-list">
+                    <li>
+                      <span class="bullet-arrow">▹</span>
+                      <span><strong>Data Cleaning & EDA:</strong> Analyzed multi-variable distribution patterns and correlation matrices between lecture attendance, study commitment, and exam marks.</span>
+                    </li>
+                    <li>
+                      <span class="bullet-arrow">▹</span>
+                      <span><strong>Feature Selection & Engineering:</strong> Identified key predictive indicators using correlation thresholding and standardized features using Scikit-learn scalers.</span>
+                    </li>
+                    <li>
+                      <span class="bullet-arrow">▹</span>
+                      <span><strong>Model Training & Validation:</strong> Implemented train-test splits (80/20) and benchmarked Linear Regression vs Decision Trees; validated with Mean Squared Error (MSE) and R² metrics.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Tech Stack Pills -->
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">Pandas</span>
+                  <span class="tech-pill">NumPy</span>
+                  <span class="tech-pill">Matplotlib</span>
+                  <span class="tech-pill">Scikit-learn</span>
+                  <span class="tech-pill">Linear Regression</span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="project-actions">
+                  <button class="btn btn-gradient open-modal-btn" data-project="student">
+                    <span>Full Architecture Details</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </button>
+
+                  <a href="https://github.com/kalyan8696" target="_blank" rel="noopener noreferrer" class="btn btn-glass" aria-label="View Student Performance Prediction on GitHub">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>GitHub Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: House Price Prediction -->
+          <article class="project-showcase glass-panel reveal-up" id="project-house">
+            <div class="project-grid">
+              <!-- Visual Column with interactive hover image -->
+              <div class="project-media-col">
+                <div class="project-image-container">
+                  <img src="assets/images/house-price-ml.jpg" alt="House Price Prediction Analytics Platform" class="project-img" loading="lazy">
+                  <div class="project-badge-floating">
+                    <span class="status-dot"></span>
+                    <span>Multi-Variable Regression &bull; Scikit-learn</span>
+                  </div>
+                  <div class="project-overlay-actions">
+                    <button class="btn btn-sm btn-glass btn-glow open-modal-btn" data-project="house" aria-label="View deep dive architecture for House Price Prediction">
+                      🔍 View Model Architecture
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Live Interactive House Valuation Estimator -->
+                <div class="interactive-simulator-box">
+                  <div class="sim-header">
+                    <div class="sim-title-wrap">
+                      <span class="sim-dot dot-cyan"></span>
+                      <span class="sim-title">Live Valuation Estimator</span>
+                    </div>
+                    <span class="sim-hint">Real-time regression model simulation</span>
+                  </div>
+
+                  <div class="sim-controls">
+                    <!-- Slider 1: Area Sq Ft -->
+                    <div class="sim-slider-group">
+                      <div class="sim-slider-label">
+                        <span>Total Built-up Area:</span>
+                        <span class="slider-value" id="valArea">1,850 sq.ft</span>
+                      </div>
+                      <input type="range" id="inputArea" min="600" max="4500" value="1850" step="50" class="custom-range" aria-label="House Area in Square Feet">
+                    </div>
+
+                    <!-- Slider 2: Bedrooms & Bathrooms -->
+                    <div class="sim-dual-row">
+                      <div class="sim-slider-group w-50">
+                        <div class="sim-slider-label">
+                          <span>Bedrooms:</span>
+                          <span class="slider-value" id="valBeds">3 BHK</span>
+                        </div>
+                        <input type="range" id="inputBeds" min="1" max="5" value="3" step="1" class="custom-range" aria-label="Number of Bedrooms">
+                      </div>
+                      <div class="sim-slider-group w-50">
+                        <div class="sim-slider-label">
+                          <span>Bathrooms:</span>
+                          <span class="slider-value" id="valBaths">2 Bath</span>
+                        </div>
+                        <input type="range" id="inputBaths" min="1" max="4" value="2" step="1" class="custom-range" aria-label="Number of Bathrooms">
+                      </div>
+                    </div>
+
+                    <!-- Slider 3: Location Tier -->
+                    <div class="sim-slider-group">
+                      <div class="sim-slider-label">
+                        <span>Location Quality Tier:</span>
+                        <span class="slider-value" id="valLocation">Tier 1 (Prime Urban)</span>
+                      </div>
+                      <input type="range" id="inputLocation" min="1" max="3" value="3" step="1" class="custom-range" aria-label="Location Tier">
+                    </div>
+                  </div>
+
+                  <!-- Live Valuation Calculation Output -->
+                  <div class="sim-result-card">
+                    <div class="result-details">
+                      <span class="result-title">Estimated Market Price:</span>
+                      <span class="result-value gradient-text" id="predictedPrice">₹ 1.15 Cr</span>
+                    </div>
+                    <div class="result-badge-wrap">
+                      <span class="grade-badge badge-cyan" id="predictedPriceUsd">~$138,000 USD</span>
+                      <span class="conf-badge">R² Score: 0.91</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Information Column -->
+              <div class="project-info-col">
+                <div class="project-num-tag">PROJECT 02 &bull; MACHINE LEARNING</div>
+                <h3 class="project-title">Real Estate Valuation & Price Prediction</h3>
+                <p class="project-tagline">
+                  A multi-variable machine learning regression system that predicts residential real estate valuations by analyzing square footage, architectural dimensions, age, and prime location tiers.
+                </p>
+
+                <!-- Key Implementation Highlights -->
+                <div class="project-highlights-box">
+                  <h4 class="highlights-heading">Key Engineering Highlights:</h4>
+                  <ul class="highlights-list">
+                    <li>
+                      <span class="bullet-arrow">▹</span>
+                      <span><strong>Outlier Detection & Imputation:</strong> Cleaned skewed price distributions, handled interquartile anomalies, and engineered price-per-square-foot ratios.</span>
+                    </li>
+                    <li>
+                      <span class="bullet-arrow">▹</span>
+                      <span><strong>Multi-Variate Feature Modeling:</strong> Integrated area, bedroom counts, bathroom density, location weights, and property age into a normalized feature matrix.</span>
+                    </li>
+                    <li>
+                      <span class="bullet-arrow">▹</span>
+                      <span><strong>Rigorous Model Benchmarking:</strong> Trained and compared Scikit-learn regressors; evaluated variance with Root Mean Squared Error (RMSE) and R² coefficients.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Tech Stack Pills -->
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">Pandas</span>
+                  <span class="tech-pill">NumPy</span>
+                  <span class="tech-pill">Matplotlib</span>
+                  <span class="tech-pill">Scikit-learn</span>
+                  <span class="tech-pill">Regression Metrics</span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="project-actions">
+                  <button class="btn btn-gradient open-modal-btn" data-project="house">
+                    <span>Full Architecture Details</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </button>
+
+                  <a href="https://github.com/kalyan8696" target="_blank" rel="noopener noreferrer" class="btn btn-glass" aria-label="View House Price Prediction on GitHub">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>GitHub Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EDUCATION & TIMELINE ==================== -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal-up">
+          <div class="section-tag">
+            <span class="tag-icon">🎓</span>
+            <span>ACADEMIC BACKGROUND</span>
+          </div>
+          <h2 class="section-title">Education & Certifications</h2>
+          <p class="section-subtitle">
+            Consistent academic excellence in computer applications, complemented by professional soft skills and domain credentials.
+          </p>
+        </div>
+
+        <div class="education-grid">
+          <!-- Timeline Column (Left) -->
+          <div class="timeline-column reveal-left">
+            <h3 class="column-subtitle">Academic Qualifications</h3>
+            
+            <div class="timeline-container">
+              <!-- Timeline Item 1: MCA -->
+              <div class="timeline-item">
+                <div class="timeline-node">
+                  <div class="node-dot"></div>
+                </div>
+                <div class="timeline-card glass-panel">
+                  <div class="timeline-period-badge">June 2025 – April 2027 (Ongoing)</div>
+                  <h4 class="degree-title">Master of Computer Application (MCA)</h4>
+                  <div class="institution-name">Silver Oak University</div>
+
+                  <!-- Scores Highlight -->
+                  <div class="score-pills-row">
+                    <span class="score-pill score-high">
+                      <span class="score-label">Semester 2:</span>
+                      <strong class="score-val">9.20 SGPA</strong>
+                    </span>
+                    <span class="score-pill">
+                      <span class="score-label">Semester 1:</span>
+                      <strong class="score-val">7.80 SGPA</strong>
+                    </span>
+                  </div>
+
+                  <p class="timeline-desc">
+                    Specializing in advanced computational methodologies, Machine Learning, Data Analytics, Python scripting, and system architecture. Demonstrated outstanding academic momentum reaching 9.20 SGPA in Semester 2.
+                  </p>
+
+                  <div class="timeline-focus-tags">
+                    <span>Machine Learning</span>
+                    <span>Advanced Data Science</span>
+                    <span>Database Architecture</span>
+                    <span>Software Systems</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Timeline Item 2: BCA -->
+              <div class="timeline-item">
+                <div class="timeline-node">
+                  <div class="node-dot"></div>
+                </div>
+                <div class="timeline-card glass-panel">
+                  <div class="timeline-period-badge">January 2022 – April 2025</div>
+                  <h4 class="degree-title">Bachelor of Computer Application (BCA)</h4>
+                  <div class="institution-name">Veer Narmad South Gujarat University (VNSGU), Surat</div>
+
+                  <!-- Scores Highlight -->
+                  <div class="score-pills-row">
+                    <span class="score-pill score-high">
+                      <span class="score-label">Cumulative GPA:</span>
+                      <strong class="score-val">7.74 CGPA</strong>
+                    </span>
+                    <span class="score-pill">
+                      <span class="score-label">Graduation:</span>
+                      <strong class="score-val">First Class</strong>
+                    </span>
+                  </div>
+
+                  <p class="timeline-desc">
+                    Built strong foundations in Object-Oriented Programming (Java, Python), Relational Database Management Systems (SQL), Data Structures, Algorithms, and Web Development.
+                  </p>
+
+                  <div class="timeline-focus-tags">
+                    <span>Core Python & Java</span>
+                    <span>SQL & Relational DBs</span>
+                    <span>Web Development</span>
+                    <span>OOP Principles</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications & Languages Column (Right) -->
+          <div class="certifications-column reveal-right">
+            <h3 class="column-subtitle">Certifications & Achievements</h3>
+
+            <!-- Certifications List -->
+            <div class="certs-list">
+              <!-- Cert 1 -->
+              <div class="cert-card glass-panel">
+                <div class="cert-icon-box">🏆</div>
+                <div class="cert-content">
+                  <div class="cert-date">March 2024</div>
+                  <h4 class="cert-name">Training Skills for E-Business Managers</h4>
+                  <p class="cert-detail">Professional development in digital commerce management, analytical decision-making, and organizational leadership.</p>
+                </div>
+              </div>
+
+              <!-- Cert 2 -->
+              <div class="cert-card glass-panel">
+                <div class="cert-icon-box">🗣️</div>
+                <div class="cert-content">
+                  <div class="cert-date">October 2022</div>
+                  <h4 class="cert-name">Communication Skills & Personality Development</h4>
+                  <p class="cert-detail">Comprehensive program on technical articulation, presentation capabilities, team collaboration, and client negotiation.</p>
+                </div>
+              </div>
+
+              <!-- Cert 3 -->
+              <div class="cert-card glass-panel">
+                <div class="cert-icon-box">🧘</div>
+                <div class="cert-content">
+                  <div class="cert-date">March 2023</div>
+                  <h4 class="cert-name">Foundation Course on Yoga</h4>
+                  <p class="cert-detail">Fostering mental endurance, disciplined focus, mindfulness, and holistic wellness.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Languages Card -->
+            <div class="languages-box glass-panel">
+              <h4 class="lang-heading">
+                <span>🌐</span> Multilingual Proficiency
+              </h4>
+              <p class="lang-sub">Comfortable collaborating in diverse, multicultural environments:</p>
+              
+              <div class="lang-badges-grid">
+                <div class="lang-pill">
+                  <span class="lang-name">English</span>
+                  <span class="lang-level">Professional Working</span>
+                </div>
+                <div class="lang-pill">
+                  <span class="lang-name">Hindi</span>
+                  <span class="lang-level">Full Professional / Native</span>
+                </div>
+                <div class="lang-pill">
+                  <span class="lang-name">Gujarati</span>
+                  <span class="lang-level">Native Fluency</span>
+                </div>
+                <div class="lang-pill">
+                  <span class="lang-name">Marwadi</span>
+                  <span class="lang-level">Native Fluency</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal-up">
+          <div class="section-tag">
+            <span class="tag-icon">📬</span>
+            <span>GET IN TOUCH</span>
+          </div>
+          <h2 class="section-title">Let's Connect & Build Something Great</h2>
+          <p class="section-subtitle">
+            Whether you have an internship opportunity, full-time opening, machine learning project, or just want to discuss data science — I'd love to hear from you.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column: Direct Action Buttons & Contact Info -->
+          <div class="contact-info-col reveal-left">
+            <div class="contact-status-card glass-panel">
+              <div class="status-header">
+                <span class="pulse-beacon"></span>
+                <span class="status-live-title">Actively Seeking Opportunities</span>
+              </div>
+              <p class="status-summary">
+                Open to Machine Learning Developer, Data Science Intern/Associate, and Full-Stack Engineering roles. Available for both remote and on-site positions.
+              </p>
+              <div class="status-meta">
+                <span>📍 Gujarat, India &bull; IST (UTC+05:30)</span>
+              </div>
+            </div>
+
+            <!-- 1-Click Interactive Contact Cards -->
+            <div class="contact-cards-list">
+              <!-- Email Card -->
+              <div class="contact-action-card glass-panel">
+                <div class="card-icon-circle icon-purple">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="action-card-content">
+                  <span class="action-label">Email Address</span>
+                  <a href="mailto:purohitkalyan34@gmail.com" class="action-value">purohitkalyan34@gmail.com</a>
+                </div>
+                <div class="card-buttons">
+                  <button class="btn-copy copy-btn" data-copy="purohitkalyan34@gmail.com" title="Copy email address" aria-label="Copy Email">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                  <a href="mailto:purohitkalyan34@gmail.com" class="btn-action-link" title="Open mail client" aria-label="Send Email">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Phone Card -->
+              <div class="contact-action-card glass-panel">
+                <div class="card-icon-circle icon-cyan">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="action-card-content">
+                  <span class="action-label">Direct Phone</span>
+                  <a href="tel:+916375074050" class="action-value">+91 6375074050</a>
+                </div>
+                <div class="card-buttons">
+                  <button class="btn-copy copy-btn" data-copy="+916375074050" title="Copy phone number" aria-label="Copy Phone Number">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                  <a href="tel:+916375074050" class="btn-action-link" title="Call directly" aria-label="Call Phone">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- GitHub Card -->
+              <div class="contact-action-card glass-panel">
+                <div class="card-icon-circle icon-dark">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </div>
+                <div class="action-card-content">
+                  <span class="action-label">GitHub Profile</span>
+                  <a href="https://github.com/kalyan8696" target="_blank" rel="noopener noreferrer" class="action-value">github.com/kalyan8696</a>
+                </div>
+                <div class="card-buttons">
+                  <a href="https://github.com/kalyan8696" target="_blank" rel="noopener noreferrer" class="btn-action-link" title="Open GitHub" aria-label="Visit GitHub">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- LinkedIn Card -->
+              <div class="contact-action-card glass-panel">
+                <div class="card-icon-circle icon-blue">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </div>
+                <div class="action-card-content">
+                  <span class="action-label">LinkedIn Network</span>
+                  <a href="https://www.linkedin.com/in/kalyan-purohit-07492736a" target="_blank" rel="noopener noreferrer" class="action-value">kalyan-purohit-07492736a</a>
+                </div>
+                <div class="card-buttons">
+                  <a href="https://www.linkedin.com/in/kalyan-purohit-07492736a" target="_blank" rel="noopener noreferrer" class="btn-action-link" title="Open LinkedIn" aria-label="Visit LinkedIn">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Send Message Form -->
+          <div class="contact-form-col reveal-right">
+            <div class="contact-form-panel glass-panel">
+              <h3 class="form-title">Send a Direct Message</h3>
+              <p class="form-subtitle">Fill in the details below and I will respond to your inquiry promptly.</p>
+
+              <form id="contactForm" class="contact-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="senderName" class="form-label">Your Name</label>
+                    <input type="text" id="senderName" name="name" class="form-input" placeholder="e.g. Alex Johnson" required>
+                    <span class="input-error-msg" id="nameError"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="senderEmail" class="form-label">Email Address</label>
+                    <input type="email" id="senderEmail" name="email" class="form-input" placeholder="e.g. alex@company.com" required>
+                    <span class="input-error-msg" id="emailError"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="senderSubject" class="form-label">Subject</label>
+                  <input type="text" id="senderSubject" name="subject" class="form-input" placeholder="Job Opportunity / ML Project Collaboration" required>
+                  <span class="input-error-msg" id="subjectError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="senderMessage" class="form-label">Message</label>
+                  <textarea id="senderMessage" name="message" rows="5" class="form-textarea" placeholder="Hello Kalyan, I was impressed by your ML projects..." required></textarea>
+                  <span class="input-error-msg" id="messageError"></span>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn btn-lg btn-gradient w-100">
+                  <span class="btn-text">Send Message</span>
+                  <span class="btn-spinner" aria-hidden="true"></span>
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-brand">
+            <span class="brand-bracket">&lt;</span>
+            <span class="brand-name">Kalyan</span>
+            <span class="brand-dot">.ML</span>
+            <span class="brand-bracket">/&gt;</span>
+          </a>
+          <p class="footer-tagline">
+            MCA Scholar &bull; Machine Learning Developer &bull; Building intelligent, data-driven software solutions.
+          </p>
+        </div>
+
+        <div class="footer-nav-links">
+          <div class="footer-col">
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-col-title">Featured Work</h4>
+            <ul>
+              <li><a href="#project-student">Student Performance ML</a></li>
+              <li><a href="#project-house">House Price Prediction</a></li>
+              <li><a href="https://github.com/kalyan8696" target="_blank" rel="noopener noreferrer">GitHub Repositories</a></li>
+              <li><a href="https://www.linkedin.com/in/kalyan-purohit-07492736a" target="_blank" rel="noopener noreferrer">LinkedIn Network</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; <span id="currentYear">2026</span> Kalyan Purohit. All rights reserved.
+        </p>
+
+        <div class="footer-socials">
+          <a href="https://github.com/kalyan8696" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/kalyan-purohit-07492736a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="mailto:purohitkalyan34@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <button id="backToTopBtn" class="back-to-top" aria-label="Scroll back to top">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== PROJECT DETAILS MODAL ==================== -->
+  <div id="projectModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog glass-panel">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close details dialog">&times;</button>
+      
+      <div class="modal-body" id="modalBody">
+        <!-- Content injected dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
